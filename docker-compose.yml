@@ -1,0 +1,18 @@
+services:
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+
+  backend:
+    build: ./backnend
+    environment:
+      - DATABASE_PATH=/app/data/tasks.db
+    volumes:
+      - task-data:/app/data
+    ports:
+      - "5000:5000"
+
+volumes:
+  task-data:  
