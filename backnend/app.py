@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 import sqlite3
+import os
 
 app = Flask(__name__)
 
-DATABASE = "tasks.db"
+DATABASE = os.getenv("DATABASE_PATH", "tasks.db")
 
 
 def get_db():
