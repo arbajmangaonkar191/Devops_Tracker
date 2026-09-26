@@ -4,6 +4,10 @@ pipeline {
         label 'Worker-node'
     }
 
+    triggers {
+        githubPush()
+    }
+
     stages {
 
         stage('Clone') {
