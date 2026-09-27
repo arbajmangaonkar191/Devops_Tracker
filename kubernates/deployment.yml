@@ -1,0 +1,27 @@
+kind: Deployment
+
+apiVersion: apps/v1
+
+metadata:
+  name: frontend-dev-deploy
+  namespace: dev-track
+
+spec:
+  
+  replica=2
+  selector:
+    matchLables:
+      app: frontend
+  template:
+     
+    metadata:
+      label:
+        app: frontend
+
+      
+    spec:
+       containers:
+         - name: frontend-container
+           image: arbajmangaonkar/tracker_app-frontend:latest 
+           port:
+             containerPort: 80

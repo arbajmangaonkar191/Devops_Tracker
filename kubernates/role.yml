@@ -1,0 +1,19 @@
+kind: Role
+
+apiVersion: rbac.authorization.k8s.io/v1
+
+metadata:
+
+  name: restart-deployment-role
+  namespace: dev-track
+
+spec:
+
+  rules:
+    
+    - apiGroups: ["apps"] 
+      resources: ["deployments"]
+      verbs:
+        - patch
+        - update
+        - get 

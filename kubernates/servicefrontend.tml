@@ -1,0 +1,21 @@
+kind: Service
+
+apiVersion: v1
+
+metadata:
+
+  name: frontend-service
+  namespace: dev-track
+
+spec:
+
+ selector:
+    app: frontend
+
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30149
+
+  type:NodePort
+
